@@ -93,6 +93,11 @@ namespace Jug
         layer->OnAttach();
     }
 
+    GLFWwindow *Application::getWindow()
+    {
+        return window;
+    }
+
     Application::Application(std::string title, uint32_t width, uint32_t height)
         : title(title), width(width), height(height)
     {

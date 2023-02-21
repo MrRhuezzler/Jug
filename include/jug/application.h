@@ -35,6 +35,8 @@ namespace Jug
         void setClearColor(float r, float g, float b, float a);
         void addLayer(std::shared_ptr<Layer> layer);
 
+        GLFWwindow *getWindow();
+
     private:
         Application(std::string title, uint32_t width, uint32_t height);
 
