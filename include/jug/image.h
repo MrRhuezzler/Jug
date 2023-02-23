@@ -17,8 +17,6 @@ namespace Jug
         void bind();
         void unBind();
 
-        void saveData();
-
         void resize(int nWidth, int nHeight);
         void setData(const void *data);
 
@@ -26,8 +24,11 @@ namespace Jug
         int getWidth() const;
         int getHeight() const;
 
+        static void saveData(const char *filename, int w, int h, int comp, const void *data, int stride);
+
     private:
         void allocateMemory();
         void relaseMemory();
     };
+
 } // namespace Image

@@ -1,5 +1,7 @@
 #include <GL/glew.h>
 
+#include "stb/stb_image_write.h"
+
 #include "jug/image.h"
 
 namespace Jug
@@ -24,10 +26,10 @@ namespace Jug
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
-    void Image::saveData()
+    void Image::saveData(const char *filename, int w, int h, int comp, const void *data, int stride)
     {
-        const uint32_t *data = new uint32_t[width * height];
-        glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, (void *)data);
+        stbi_flip_vertically_on_write(1);
+        stbi_write_png(filename, w, h, comp, data, stride);
     }
 
     void Image::resize(int nWidth, int nHeight)
