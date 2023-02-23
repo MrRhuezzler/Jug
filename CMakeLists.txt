@@ -35,6 +35,7 @@ target_link_libraries(
     ${OPENGL_LIBRARIES}
     imgui
     glm_static
+    stb
 )
 
 add_subdirectory(examples)

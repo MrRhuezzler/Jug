@@ -17,6 +17,8 @@ namespace Jug
         void bind();
         void unBind();
 
+        void saveData();
+
         void resize(int nWidth, int nHeight);
         void setData(const void *data);
 

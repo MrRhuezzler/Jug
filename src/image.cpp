@@ -24,6 +24,12 @@ namespace Jug
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
+    void Image::saveData()
+    {
+        const uint32_t *data = new uint32_t[width * height];
+        glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, (void *)data);
+    }
+
     void Image::resize(int nWidth, int nHeight)
     {
         if (width == nWidth && height == nHeight)
